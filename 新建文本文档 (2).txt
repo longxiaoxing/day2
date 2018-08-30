@@ -1,0 +1,24 @@
+{%load staticfiles%}
+min 最小的
+{% static "base/css/bootstrap.min.css%}
+{% block css%}
+{%end block%}
+<script src="{%static 'base/juery.min.js"%}
+<stript src="{%static "base/js/bootstrap.min.js"%}
+顶部导航栏
+<nav class="nav navbar-default></nav>
+<div class="container>
+{%block content%}
+{%endblock%}
+</div>
+<footer>
+<div style="foot_size:14px; color:darkgray>
+  <p></p>
+</div>
+</footer>
+
+全栈 就是前端是静态网页，后端用模板填充静态网页的内容。
+
+主页{%extends "base.html"%}
+清除浮动，避免塌陷（背景颜色）
+id是唯一的，class 定义一个属性，用类进行样式，可以多处使用 （样式的重构）

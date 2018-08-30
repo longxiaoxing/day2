@@ -1,0 +1,27 @@
+分页：#实现ART文章的分页
+#获取请求参数的page页码
+page=request.GET.get("page","1")
+git clone git@github.com:xapy802Pro/XArtPro.git 
+#page=request.GET.get("page")
+#page=int(page) if page else 1
+pagination=Paginator(arts,10)#分页器（django独有的）
+pager=paginator.page(int(page))#读取第一页的数据
+category__parent_id(__是属性）
+select a.title,
+b.title "分类名",b.id "分类ID',B.PARENT_id，c.title "一级分类" from t_tag a join t_category b on (a.category.id=b.id)join t_category c on(b.parent_id=c.id);(关联查询）(n个表内连接有n-1个条件）
+（十张表内的查找）
+sql注入
+select category_id from t_art group bycategory_id;
+update t_art set category_id=10  WHERE category_id=6
+select * from t_category;
+原生SQL语句查询Art.object.raw("select * from t_art limit 0,20")在django中原生sql语
+句分页  for row in rawQuerySet:
+          print(row.title)
+QS=Art.object.raw("select a.* from t_art a")#有外键，可以这么写, a是表的表名
+for art in qs:
+   print(art.category.title)#关联对象自动就查
+as=Art.object.raw("select id ,title,cover form t_art#必须有主键
+ for art in as:
+     print(art.title,art.cover,art.author)
+
+category__parent__parent__parent_id(几级分类）

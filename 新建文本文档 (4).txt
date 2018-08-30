@@ -1,0 +1,23 @@
+父分类关系？未声明先引用:'类名'或‘self’
+parent=models.ForeignKey('self',null=True,blank=True)#后台管理页面中是否可为空（验证），false是必填项。
+默认true
+文章的封面图片cover
+#pip install pillow(pil)
+django中imageField图片字段
+1）依赖pil库
+2）在settings.py设置MEDIA_ROOT和MEDIA_URL
+MEDIA_ROOT:表示媒体文件实际在文件系统中（系统文件资源管理器）存放的位置。--相对于操作系统的
+MEDIR_URL:表示Http访问媒体文件的路径。（作为服务器别人访问资源的路径，相对与web服务，必须知道端口）
+staticfles_dirs=[]静态资源存放操作路径。相对于web服务。
+staticfles_dirs=[
+OS.PATH.JOIN(base_dir,"static"]
+
+MEDIA_ROOT=OS.PATH.JOIN(base_dir,"static/upload")
+MEDIR_URL="/static/upload/"
+cover=models.ImageField(verbose_name="封面"，upload_to="arts",#相对MEDIA_ROOT
+,null=True,blank=True)
+class Rollset(models.Models):
+     choices必须是元组，字典不行
+class Meta:
+    db_table="t_chapter"
+    verbose_name="章节"
